@@ -22,3 +22,21 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* rails db:create
+* rails db:migrate
+
+
+* heroku logs
+* heroku open
+* heroku ps
+* git push heroku master
+* https://agile-spire-60503.herokuapp.com/
+
+
+* git add -p <filename>
+* git commit -m ""
+* git checkout -b <branch_name>
+* git merge <branch_name>
+* git branch -d <branch_name>
+* git push -u origin master
