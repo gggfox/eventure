@@ -25,7 +25,8 @@ Things you may want to cover:
 
 * rails db:create
 * rails db:migrate
-
+* rails generate model User name:string email:string:index
+* rails db:migrate
 
 * heroku logs
 * heroku open

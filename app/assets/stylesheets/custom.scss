@@ -1,0 +1,17 @@
+html,body{
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content{
+  height:auto;
+  flex: 1 0 auto;
+}
+#debug{
+  margin-top: auto;
+  background: black;
+  color:white;
+  flex-shrink: 0;
+}
