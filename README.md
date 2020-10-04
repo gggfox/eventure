@@ -27,6 +27,8 @@ Things you may want to cover:
 * rails db:migrate
 * rails generate model User name:string email:string:index
 * rails db:migrate
+* rails server
+* rails db:migrate:reset
 
 * heroku logs
 * heroku open
