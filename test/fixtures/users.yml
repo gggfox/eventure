@@ -1,0 +1,4 @@
+gerardo:
+  name: Gerardo Galan
+  email: a007@itesm.com
+  password_digest: <%= User.digest('password') %>

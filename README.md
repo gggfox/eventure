@@ -29,13 +29,17 @@ Things you may want to cover:
 * rails db:migrate
 * rails server
 * rails db:migrate:reset
++ rails test
++ 
 
 * heroku logs
 * heroku open
 * heroku ps
 * git push heroku master
 * https://agile-spire-60503.herokuapp.com/
-
++ $ heroku run rails db:migrate
++ $ heroku pg:reset DATABASE
++ $ heroku run rails db:migrate
 
 * git add -p <filename>
 * git commit -m ""
