@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class SessionsController < ApplicationController
   def new; end
 
@@ -9,6 +7,7 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:session][:password])
       reset_session # included rails method
       log_in user   # session_helper method
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_to user_url(user)
     else
       # now method deletes falsh on reload
@@ -18,8 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    p 'a user logged out'
-    log_out
+    log_out if logged_in? #conditional allows us to have multiple windows open
     redirect_to root_url
   end
 end

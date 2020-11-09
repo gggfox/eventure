@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  location: MyString
+  date: 2020-10-19 12:47:57
+  desc: MyText
+  price: 1
+
+two:
+  title: MyString
+  location: MyString
+  date: 2020-10-19 12:47:57
+  desc: MyText
+  price: 1

@@ -21,6 +21,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def disp_42
+    @num = 'hola como estas'
+  end
+
   private
 
   def user_params

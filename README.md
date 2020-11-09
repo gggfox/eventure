@@ -22,6 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
++ POSTGRESQL user privilege
+
+$ psql -U postgres
+postgres=# ALTER USER username CREATEDB;
 
 * rails db:create
 * rails db:migrate
@@ -30,7 +34,7 @@ Things you may want to cover:
 * rails server
 * rails db:migrate:reset
 + rails test
-+ 
++ rails g migration add_remember_digest_to_users remember_digest:string
 
 * heroku logs
 * heroku open
@@ -40,6 +44,7 @@ Things you may want to cover:
 + $ heroku run rails db:migrate
 + $ heroku pg:reset DATABASE
 + $ heroku run rails db:migrate
++ $ heroku run rails db:seed
 
 * git add -p <filename>
 * git commit -m ""
