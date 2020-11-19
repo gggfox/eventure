@@ -1,5 +1,10 @@
-<h2>Hello World</h2>
-<p>
-  The time is now: <%= Time.now.strftime("%d/%m/%Y") %>
-</p>
+<% provide(:title, "Eventure") %>
+<h1>All users</h1>
+
+<%=will_paginate%>
+
+<ul class= "users">
+    <%= render @users %>   
+</ul>
+
 <%= javascript_pack_tag 'hello' %>
