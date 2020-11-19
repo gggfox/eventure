@@ -1,8 +1,8 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 m-auto">
+    <h1 class="mb-1 mt-1">Log in</h1>
     <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
 
       <%= f.label :email %>
