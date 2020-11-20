@@ -14,8 +14,8 @@
     </li>
 
  <% if logged_in? %>
-          <li><%=link_to"Users", users_path%></li>
-          <li class="dropdown">
+          <li><%=link_to"Users", users_path, class: 'nav-link' %></li>
+          <li class="dropdown nav-link">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
             </a>
