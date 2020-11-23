@@ -1,0 +1,29 @@
+<%= form_with(model: @event, local: true) do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <%= f.label :price%>
+    <%= f.number_field :price %>
+
+    <%= f.label :image_name %>
+    <%= f.text_field :image_name %>
+
+    <h3>Categories</h3>
+    <% @categories.each do |c| %>
+      <%= f.check_box c.name %>
+      <%= f.label c.name %>
+    <%end%>
+
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+
+  <% end %>
