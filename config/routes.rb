@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/42', to: 'users#disp_42'
   resources :users
+  resources :events
+  resources :categories
 end
