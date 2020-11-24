@@ -15,8 +15,9 @@ class EventsController < ApplicationController
 
     def create
         @event = Event.new(event_params)
+        @categories = Category.all
         if @event.save
-            redirect_to @event
+            redirect_to events_url
         end
     end
     
@@ -27,16 +28,23 @@ class EventsController < ApplicationController
 
     def update
         @event = Event.find(params[:id])
+        p @event.date
         if @event.update(event_params)
             flash[:success] = "Event updated"
-            redirect_to @event
+            redirect_to events_url
         else
             render 'edit'
         end
     end
 
+    def destroy
+        Event.find(params[:id]).destroy
+        flash[:success] = "Event deleted"
+        redirect_to events_url
+    end
+
     private
     def event_params
-        params.require(:event)
+        params.require(:event).permit(:title, :location, :date, :desc, :price, :image_name, :category_ids => [])
     end
 end

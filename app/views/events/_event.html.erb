@@ -1,3 +1,10 @@
-<li><%= link_to "edit", edit_event_path(event.id)%></li>
-<li><%= event.title %></li>
-<li><%= event.location %></li>
+<div class="col-12 col-sm-6 col-md-3">
+<p><%= event.title %></p>
+<p><%= event.location %></p>
+<p><%= event.price %></p>
+<p>
+    <%= link_to "edit", edit_event_path(event.id)%>
+    <%= link_to "delete", event, method: :delete,
+                                data: { confirm: "You sure?" } %>
+</p>
+</div>

@@ -8,9 +8,9 @@
 
     <%= f.label :date %>
     <%= f.date_field :date, class: 'form-control' %>
-
-    <%= f.label :description %>
-    <%= f.text_area :description, class: 'form-control' %>
+    
+    <%= f.label :desc %>
+    <%= f.text_area :desc, class: 'form-control' %>
 
     <%= f.label :price%>
     <%= f.number_field :price, class: 'form-control' %>
@@ -18,14 +18,22 @@
     <%= f.label :image_name %>
     <%= f.text_field :image_name, class: 'form-control' %>
 
-    <h3>Categories</h3>
-    <div>
-      <% @categories.each do |c| %>
-        <%= f.check_box c.name %>
-        <%= f.label c.name %>
-      <%end%>
-    </div>
+    <h3>current categories</h3>
+    <% list = [] %>
+    <% @event.categories.each do |b| %>
+      <div><%list.push(b.name)%></div>
+    <%end%>
+
+    <h3>add categories</h3>
+    <%= f.collection_check_boxes(:category_ids, @categories, :id, :name) do |b| %>
+      <div><%= b.check_box({checked: list.include?(b.text)}) %><%=  b.label {b.text}%></div>
+    <%end%>
 
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-
+      
   <% end %>
+  
+  <%begin%>
+  <%= image_tag("#{@event.image_name}.jpg") %>
+  <%rescue%>
+  <%end%>
