@@ -1,5 +1,12 @@
+
+<%= link_to "Add new category", new_category_path %>
 <ol>
 <% @categories.each do |cat| %>
-    <li><%= cat.name %></li>
+    <li>
+        <%= cat.name %> 
+        <%= link_to "edit", edit_category_path(cat)%>
+        <%= link_to "delete", cat, method: :delete,
+                                    data: { confirm: "You sure?" } %>
+        </li>
 <%end%>
 </ol>
