@@ -43,6 +43,24 @@ class EventsController < ApplicationController
         redirect_to events_url
     end
 
+    def attend
+        @event = Event.find(params[:format])
+        if !current_user.events.include?(@event)
+            current_user.events.push(@event)
+        else
+            flash[:danger] = "already attending to that event"
+        end
+        redirect_to request.referrer
+        
+        
+    end
+
+    def unattend
+        @event = Event.find(params[:format])
+        current_user.events.delete(@event)
+        redirect_to request.referrer
+    end
+
     private
     def event_params
         params.require(:event).permit(:title, :location, :date, :desc, :price, :image_name, :category_ids => [])

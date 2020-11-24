@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/login',     to: 'sessions#new'
   post '/login',    to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  post '/attend_event',   to: 'events#attend'
+  delete '/unattend_event', to: 'events#unattend'
   get '/42', to: 'users#disp_42'
   resources :users
   resources :events
