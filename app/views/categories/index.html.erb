@@ -7,10 +7,10 @@
   <%end%>
 </div>
 
-<ol>
+<ul>
 <% @categories.each do |cat| %>
-    <li>
-        <%= link_to cat.name, "/by_category/#{cat.name}" %> 
+    <h2>
+        <%= link_to cat.name, "/by_category/#{cat.name}", class: 'link' %>
         <% if current_user.admin? %>
           <button class="btn btns-ed">
             <%= link_to "edit", edit_category_path(cat), class: 'link' %>
@@ -20,6 +20,6 @@
                                     data: { confirm: "You sure?" }, class: 'link' %>
           </button>
         <%end%>
-        </li>
+        </h2>
 <%end%>
-</ol>
+</ul>
