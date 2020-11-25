@@ -1,13 +1,15 @@
 <li>
+    <% if current_user.admin? %>
     <%= link_to "edit", edit_event_path(event.id)%>
     <%= link_to "delete", event, method: :delete,
                                 data: { confirm: "You sure?" } %>
-
+    <%end%>
+    
     <%if  !current_user.events.include?(event) %>
         <%= link_to "save", attend_event_path(event.id), method: :post %>
     <% else %>
         <%= link_to "unsave", unattend_event_path(event.id), method: :delete %>
     <%end%>
 </li>
-<li><%= event.title %></li>
+<li><%= link_to event.title, event %></li>
 <li><%= event.location %></li>

@@ -1,12 +1,15 @@
-
-<%= link_to "Add new category", new_category_path %>
+<% if current_user.admin? %>
+    <%= link_to "Add new category", new_category_path %>
+<%end%>
 <ol>
 <% @categories.each do |cat| %>
     <li>
         <%= cat.name %> 
-        <%= link_to "edit", edit_category_path(cat)%>
-        <%= link_to "delete", cat, method: :delete,
+        <% if current_user.admin? %>
+            <%= link_to "edit", edit_category_path(cat)%>
+            <%= link_to "delete", cat, method: :delete,
                                     data: { confirm: "You sure?" } %>
+        <%end%>
         </li>
 <%end%>
 </ol>

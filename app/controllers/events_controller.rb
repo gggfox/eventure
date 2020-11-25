@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+    before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
 
     def index
         @events = Event.all
@@ -51,8 +52,6 @@ class EventsController < ApplicationController
             flash[:danger] = "already attending to that event"
         end
         redirect_to request.referrer
-        
-        
     end
 
     def unattend
@@ -64,5 +63,13 @@ class EventsController < ApplicationController
     private
     def event_params
         params.require(:event).permit(:title, :location, :date, :desc, :price, :image_name, :category_ids => [])
+    end
+
+    def logged_in_user
+      unless logged_in? 
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
     end
 end
