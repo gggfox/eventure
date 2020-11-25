@@ -3,6 +3,7 @@
 </div>
 
 <%if @events.count > 0%>
+    <h2><%= @events.first().categories.first().name %> events</h2>
   <div class="row p-3 m-auto">
     <%= render @events %>
   </div>
