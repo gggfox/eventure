@@ -43,5 +43,5 @@ Comment.create!( comment:"awsome",
                 image_name: "party",
                 category_ids: ["1"],
                 comment: ["1"]
-                ))
+                )
 end
