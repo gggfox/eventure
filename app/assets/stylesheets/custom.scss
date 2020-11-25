@@ -5,13 +5,61 @@ body {
   display: flex;
   flex-direction: column;
 }
+.main-body{
+  background-color: #ECEFF4;
+}
+.navbar{
+  background-color: #2E3440;
+  color: white;
+}
 .content{
   height:auto;
   flex: 1 0 auto;
+}
+.btns {
+  border-color: #5E81AC;
+  background-color: #5E81AC;
+  text-decoration: none;
+  color: white;
+}
+.btns-del {
+  float: right;
+  border-color: #BF616A;
+  background-color: #BF616A;
+  text-decoration: none;
+  color: white;
+}
+.btns-del2 {
+  border-color: #BF616A;
+  background-color: #BF616A;
+  text-decoration: none;
+  color: white;
+}
+.btns-ed {
+  border-color: #A3BE8C;
+  background-color: #A3BE8C;
+  text-decoration: none;
+  color: white;
+}
+.link {
+  text-decoration: none;
+  color: #2E3440;
+}
+.event {
+  background-color: #D8DEE9;
+  padding: 10px;
+  border: solid 5px;
+}
+.title{
+  margin: 10px;
 }
 #debug{
   margin-top: auto;
   background: black;
   color:white;
   flex-shrink: 0;
+}
+
+.event_img{
+  width: 45vw;
 }

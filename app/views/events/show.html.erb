@@ -1,4 +1,7 @@
 <%= render @event %>
+
 <h2>Comments</h2>
-<%= render :partial => 'comments/form', locals: {user_id: current_user.id, event_id: @event.id} %>
+<% if @event.date < DateTime.now() || current_user.admin? %>
+    <%= render :partial => 'comments/form', locals: {user_id: current_user.id, event_id: @event.id} %>
+<%end%>
 <%= render @event.comments %>

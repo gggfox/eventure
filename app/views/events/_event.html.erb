@@ -1,15 +1,24 @@
-<li>
+<div class="col-12 col-md-3 mb-2 mb-md-5 ml-md-5 mr-md-5">
+<div class="card event">
+<div class="card-body">
+<h4 class="card-title"><%= link_to event.title, event %></h4>
+<h5 class="card-subtitle mb-2 text-muted">$<%= event.price %></h5>
+<h6 class="card-text"><%= event.date.strftime("%d-%m-%Y") %></h6>
+<h6 class="card-text"><%= event.location %></h6>
+<p class="card-text"><%= event.desc %></p>
+
     <% if current_user.admin? %>
-    <%= link_to "edit", edit_event_path(event.id)%>
+    <%= link_to "edit", edit_event_path(event.id), class: 'card-link link'%>
     <%= link_to "delete", event, method: :delete,
-                                data: { confirm: "You sure?" } %>
+                                data: { confirm: "You sure?" }, class: 'card-link link' %>
     <%end%>
     
     <%if  !current_user.events.include?(event) %>
-        <%= link_to "save", attend_event_path(event.id), method: :post %>
+        <%= link_to "save", attend_event_path(event.id), method: :post, class: 'card-link link' %>
     <% else %>
-        <%= link_to "unsave", unattend_event_path(event.id), method: :delete %>
+        <%= link_to "unsave", unattend_event_path(event.id), method: :delete, class: 'card-link link' %>
+        <div>rating:<%= select_tag(:option, options_for_select([["1",1],["2",2],["3",3],["4",4],["5",5]], params[:option] ), class:"select") %></div>
     <%end%>
-</li>
-<li><%= link_to event.title, event %></li>
-<li><%= event.location %></li>
+</div>
+</div>
+</div>

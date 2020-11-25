@@ -1,30 +1,33 @@
+  <%begin%>
+  <%= image_tag("#{@event.image_name}.jpg", class: "event_img") %>
+  <%rescue%>
+  <%end%>
 <%= form_with(model: @event, local: true) do |f| %>
 
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
 
     <%= f.label :location %>
-    <%= f.text_field :location %>
+    <%= f.text_field :location, class: 'form-control' %>
 
     <%= f.label :date %>
-    <%= f.date_field :date %>
-
+    <%= f.date_field :date, class: 'form-control' %>
+    
     <%= f.label :desc %>
-    <%= f.text_area :desc %>
+    <%= f.text_area :desc, class: 'form-control' %>
 
     <%= f.label :price%>
-    <%= f.number_field :price %>
+    <%= f.number_field :price, class: 'form-control' %>
 
     <%= f.label :image_name %>
-    <%= f.text_field :image_name %>
+    <%= f.text_field :image_name, class: 'form-control' %>
 
-    <h3>current categories</h3>
     <% list = [] %>
     <% @event.categories.each do |b| %>
       <div><%list.push(b.name)%></div>
     <%end%>
 
-    <h3>add categories</h3>
+    <h3>event categories</h3>
     <%= f.collection_check_boxes(:category_ids, @categories, :id, :name) do |b| %>
       <div><%= b.check_box({checked: list.include?(b.text)}) %><%=  b.label {b.text}%></div>
     <%end%>
@@ -32,8 +35,5 @@
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
       
   <% end %>
+  
 
-  <%begin%>
-  <%= image_tag("#{@event.image_name}.jpg") %>
-  <%rescue%>
-  <%end%>
