@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   delete '/unattend_event', to: 'events#unattend'
   get '/42', to: 'users#disp_42'
   post 'events/:id', to: 'comments#create'
+  get '/by_category/:q', to: 'events#by_category'
   resources :comments
   resources :users
   resources :events

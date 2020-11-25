@@ -60,6 +60,11 @@ class EventsController < ApplicationController
         redirect_to request.referrer
     end
 
+    def by_category
+        query = params[:q]
+        @events = Event.find_by_sql("SELECT * FROM events AS e INNER JOIN categories_events AS ce ON e.id = ce.event_id INNER JOIN categories AS c ON ce.category_id = c.id WHERE c.name = '#{query}'")
+    end
+
     private
     def event_params
         params.require(:event).permit(:title, :location, :date, :desc, :price, :image_name, :category_ids => [])
