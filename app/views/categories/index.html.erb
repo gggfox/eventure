@@ -4,7 +4,7 @@
 <ol>
 <% @categories.each do |cat| %>
     <li>
-        <%= cat.name %> 
+        <%= link_to cat.name, "/by_category/#{cat.name}" %> 
         <% if current_user.admin? %>
             <%= link_to "edit", edit_category_path(cat)%>
             <%= link_to "delete", cat, method: :delete,
