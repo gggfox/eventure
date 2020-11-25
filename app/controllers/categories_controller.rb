@@ -5,14 +5,7 @@ class CategoriesController < ApplicationController
     end
 
     def new
-        @categorie = Category.new
-    end
-
-    def create
-        @categorie = Category.new(category_params)
-        if @categorie.save
-          @category = Category.new
-        end
+        @category = Category.new
     end
 
     def create
@@ -24,6 +17,7 @@ class CategoriesController < ApplicationController
 
     def show
         @category = Category.find(params[:id])
+        @comment  = Comment.new
     end
 
     def edit

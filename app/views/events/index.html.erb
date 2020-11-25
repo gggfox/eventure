@@ -1,8 +1,14 @@
-<button class="btn btn-primary m-3">
-<%= link_to "Add New Event", new_event_path, class: 'btns' %>
-</button>
-<div class="container">
-<div class="row">
-  <%= render @events %>
+<div class="row title">
+  <h1>Events</h1>
+  <% if current_user.admin? %>
+    <button class="btn btn-primary btns ml-4" style="height: 45px;">
+      <%= link_to "Add New Event", new_event_path, class: 'link' %>
+    </button>
+  <%end%>
 </div>
-</div>
+
+<%if @events.count > 0%>
+  <div class="row p-3 m-auto">
+    <%= render @events %>
+  </div>
+<%end%>

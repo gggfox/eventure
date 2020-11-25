@@ -1,13 +1,25 @@
-<button class="btn btn-primary m-3">
-<%= link_to "Add new category", new_category_path, class: 'btns' %>
-</button>
+<div class="row title">
+  <h1>Categories</h1>
+  <% if current_user.admin? %>
+    <button class="btn btn-primary btns ml-4" style="height: 45px;">
+      <%= link_to "Add new category", new_category_path, class: 'link' %>
+    </button>
+  <%end%>
+</div>
+
 <ol>
 <% @categories.each do |cat| %>
     <li>
         <%= cat.name %> 
-        <%= link_to "edit", edit_category_path(cat)%>
-        <%= link_to "delete", cat, method: :delete,
-                                    data: { confirm: "You sure?" } %>
+        <% if current_user.admin? %>
+          <button class="btn btns-ed">
+            <%= link_to "edit", edit_category_path(cat), class: 'link' %>
+          </button>
+          <button class="btn btns-del2">
+            <%= link_to "delete", cat, method: :delete,
+                                    data: { confirm: "You sure?" }, class: 'link' %>
+          </button>
+        <%end%>
         </li>
 <%end%>
 </ol>

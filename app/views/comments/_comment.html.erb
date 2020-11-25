@@ -1,0 +1,10 @@
+<div>
+    <li>
+        <%= comment.comment %>
+        <% if current_user.id == comment.user_id %>
+            <%= link_to "delete", comment, method: :delete,
+                                data: { confirm: "You sure?" } %>
+        <%end%>
+    </li>
+    <li>By: <%= User.find(comment.user_id).name %></li>
+</div>

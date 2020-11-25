@@ -1,1 +1,4 @@
 <%= render @event %>
+<h2>Comments</h2>
+<%= render :partial => 'comments/form', locals: {user_id: current_user.id, event_id: @event.id} %>
+<%= render @event.comments %>
