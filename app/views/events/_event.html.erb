@@ -1,7 +1,8 @@
 <div class="col-12 col-md-3 mb-2 mb-md-5 ml-md-5 mr-md-5">
 <div class="card event">
 <div class="card-body">
-<h4 class="card-title"><%= link_to event.title, event %></h4>
+<h4 class="card-title"><%= link_to event.title.upcase, event %>(<%= event.id%>)</h4>
+
 <h5 class="card-subtitle mb-2 text-muted">$<%= event.price %></h5>
 <h6 class="card-text"><%= event.date.strftime("%d-%m-%Y") %></h6>
 <h6 class="card-text"><%= event.location %></h6>

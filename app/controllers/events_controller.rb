@@ -62,7 +62,12 @@ class EventsController < ApplicationController
 
     def by_category
         query = params[:q]
-        @events = Event.find_by_sql("SELECT * FROM events AS e INNER JOIN categories_events AS ce ON e.id = ce.event_id INNER JOIN categories AS c ON ce.category_id = c.id WHERE c.name = '#{query}'")
+        @category = query
+        search = "SELECT * FROM events AS e
+                        WHERE e.id IN (SELECT ce.event_id FROM categories_events AS ce
+                        WHERE ce.category_id=(SELECT c.id FROM categories AS c
+                        WHERE c.name='#{query}'))" 
+        @events = Event.find_by_sql(search)
     end
 
     private
