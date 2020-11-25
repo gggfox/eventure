@@ -1,7 +1,23 @@
-<%= render @event %>
+<div class="row title">
+<div class="col col-md-6">
+<div class="media">
+ <%= image_tag("#{@event.image_name}.jpg", class: "h-50 w-50") %>
+ <div class="media-body ml-3">
+   <h1><%= @event.title %></h1>
+   <h2 class="text-muted">$<%= @event.price %></h2>
+   <h3><%= @event.date.strftime("%d-%m-%Y") %></h3>
+   <h3><%= @event.location %></h3>
+   <h6><%= @event.desc %></h6>
+ </div>
+</div>
+</div>
+</div>
 
-<h2>Comments</h2>
+<h4 class="title">Comments</h4>
+<div class="row title">
 <% if @event.date < DateTime.now() || current_user.admin? %>
     <%= render :partial => 'comments/form', locals: {user_id: current_user.id, event_id: @event.id} %>
 <%end%>
+</div>
+
 <%= render @event.comments %>
