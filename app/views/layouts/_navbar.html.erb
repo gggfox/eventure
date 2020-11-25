@@ -9,10 +9,7 @@
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="/">Home</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-
+    
  <% if logged_in? %>
           <li class="nav-item"><%=link_to"Users", users_path, class: 'nav-link' %></li>
           <li class="dropdown nav-link">
@@ -44,18 +41,6 @@
         <% else %>
           <li class="nav-item"><%= link_to "Log in", login_path, class: 'nav-link' %></li>
         <% end %>
-
-
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="/signup">signup</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div>
   </ul>
   <form class="d-flex">
     <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">

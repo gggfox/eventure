@@ -1,4 +1,6 @@
-<%= link_to "Add New Event", new_event_path %>
+<button class="btn btn-primary m-3">
+<%= link_to "Add New Event", new_event_path, class: 'btns' %>
+</button>
 <div class="container">
 <div class="row">
   <%= render @events %>

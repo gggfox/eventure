@@ -1,5 +1,6 @@
-
-<%= link_to "Add new category", new_category_path %>
+<button class="btn btn-primary m-3">
+<%= link_to "Add new category", new_category_path, class: 'btns' %>
+</button>
 <ol>
 <% @categories.each do |cat| %>
     <li>
