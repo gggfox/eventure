@@ -66,3 +66,32 @@ body {
 .event_img{
   width: 25vw;
 }
+
+.delete_btn, .edit_btn, .save_btn {
+  padding: 4%;
+  border-radius: 0.3vw;
+}
+
+.delete_btn {
+  background-color: #BF616A;
+}
+.edit_btn {
+  background-color:#A3BE8C ;
+}
+.save_btn {
+  background-color: #5E81AC;
+}
+
+.event-rating{
+  padding-top: 1.5vw;
+  display: flex;
+  justify-content: center;
+}
+
+.show_event{
+  display:flex;
+}
+.event_section{
+  display: flex;
+  flex-direction: column;
+}

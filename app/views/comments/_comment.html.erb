@@ -6,5 +6,6 @@
                                 data: { confirm: "You sure?" } %>
         <%end%>
     </li>
-    <li>By: <%= User.find(comment.user_id).name %></li>
+    <% writer = User.find(comment.user_id) %>
+    <li>By: <%= link_to writer.name, writer %></li>
 </div>
