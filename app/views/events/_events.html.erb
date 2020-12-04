@@ -5,15 +5,15 @@
 			  <div class="evento-header snow">
 			  	<h1>Events</h1>
   				<% if current_user.admin? %>
-    				<button class="btn btn-primary btns ml-4 showuser" style="height: 45px;position:absolute; left:700px;">
-     	 				<%= link_to "Add New Event", new_event_path, class: 'link' %>
-    				</button>
+     	 				<%= link_to "Add New Event", new_event_path, class: 'link btn btn-primary btns ml-4 showuser" style="height: 45px;position:absolute; left:700px;' %>
   				<%end%>
   			</div>
 			<%if @events.count > 0%>
-  				<div class="row p-3 m-auto">
-    				<%= render @events %>
-				</div>
+				<section class="all_events">
+					<% @events.each do |event| %>
+						<%= render event %>
+					<%end%>
+				</section>
 			<%end%>
 		</div>
 </section>

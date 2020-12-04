@@ -1,11 +1,16 @@
-<ul class="comment-ul">
-    <li class= "snow">
+<section class="comment-ul">
+    <div class= "snow comment">
         <%= comment.comment%>
-        <% if current_user.id == comment.user_id || current_user.admin?%>
-            <%= link_to "delete", comment, method: :delete,
-                                data: { confirm: "You sure?" },class:"card-link link delete_btn deluser"%>
-        <%end%>
-    </li>
-    <% writer = User.find(comment.user_id) %>
-    <li class="snow">By: <%= link_to writer.name, writer %></li>
-</ul>
+        <% writer = User.find(comment.user_id) %>
+        <p class="snow">By: <%= link_to writer.name, writer %></p>
+
+    </div>
+    <div class="comment-del">
+    <% if current_user.id == comment.user_id || current_user.admin?%>
+    
+        <%= link_to "delete", comment, method: :delete,
+                            data: { confirm: "You sure?" },class: "delcomment"%>
+    
+    <%end%>
+    </div>
+</section>

@@ -1,11 +1,10 @@
 <section class="show_event">
   <section class="event_section">
-    <div class="row title">
     <div class="col col-md-6">
     <div class="event_section">
-    <h1 class="snow"><%= @event.title %></h1>
+    <h1 class="snow mt-3"><%= @event.title.upcase %></h1>
     
-    <h3 class="snow"><%= @event.location %></h3>
+    <h3 class="snow"><%= @event.location.upcase %></h3>
     <div>
       <%= image_tag("#{@event.image_name}.jpg", class: "show-img") %>
       <div class="flex-row under-img">
@@ -28,7 +27,6 @@
       <%end%>
       </div>
 
-    </div>
     </div>
     </div>
     </div>

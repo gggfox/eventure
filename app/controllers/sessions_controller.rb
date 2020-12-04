@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       reset_session # included rails method
       log_in user   # session_helper method
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to forwarding_url || user
+      redirect_to forwarding_url || events_url
     else
       # now method deletes falsh on reload
       flash.now[:danger] = 'Invalid email/password combination'

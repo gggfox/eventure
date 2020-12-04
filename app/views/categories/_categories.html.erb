@@ -3,9 +3,7 @@
   <div class="header-cat">
     <h1 class="snow">Categories</h1>
     <% if current_user.admin? %>
-      <button class="btn btn-primary btns ml-4" style="height: 45px;">
-        <%= link_to "Add new category", new_category_path, class: 'link' %>
-      </button>
+        <%= link_to "Create category", new_category_path, class: 'link btn btn-primary btns ml-4" style="height: 45px;' %>
     <%end%>
   </div>
 </div>

@@ -1,50 +1,48 @@
-<div class="col-12 col-md-3 mb-2 mb-md-5 ml-md-5 mr-md-5">
-<div class="card event">
-<div class="column-center">
-<h4 class="card-title snow">
-    <%= link_to event.title.upcase, event, class: 'link snow' %>
-    <% if current_user.admin? %>
-        (<%= event.id %>)
-    <%end%>
-</h4>
-<h6 class="card-text snow"><%= event.location %></h6>
-<%begin%>
-    <%= link_to image_tag("#{event.image_name}.jpg", class: "card-img-top"), event%>
-<%rescue%>
-<%end%>
-<div class="card-body">
-<%begin%>
-    <div class="categories">
-        <p class="snow rm-margin">categories: </p>
-        <% event.categories.each do |cat|%>
-            <%= link_to cat.name,  "/by_category/#{cat.name}", class: 'link snow event-category'%>
-        <%end%>
-    </div>
-<%end%>
-<div class="flex-row evenly">
-    <h5 class="card-subtitle mb-2 text-muted">$<%= event.price %></h5>
-    <h6 class="card-text date"><%= event.date.strftime("%d-%m-%Y") %></h6>
-</div>
 
-    <div class="btn-row">
+<div class=" card event">
+    <h4 class="card-title snow">
+        <%= link_to event.title.upcase, event, class: 'link snow' %>
         <% if current_user.admin? %>
-        <%= link_to "edit", edit_event_path(event.id), class: 'card-link link edit_btn editbtn'%>
-        <%= link_to "delete", event, method: :delete,
-                                    data: { confirm: "You sure?" }, class: 'card-link link delete_btn deluser' %>
+            (<%= event.id %>)
         <%end%>
-        
-        <%if  !current_user.events.include?(event) %>
-            <%= link_to "save", attend_event_path(event.id), method: :post, class: 'card-link link save_btn showuser' %>
-        <% else %>
-            <%= link_to "unsave", unattend_event_path(event.id), method: :delete, class: 'card-link link save_btn showuser' %>
+    </h4>
+    <h6 class="card-text snow"><%= event.location.upcase %></h6>
+
+    <%begin%>
+        <%= link_to image_tag("#{event.image_name}.jpg", class: "card-img-top"), event%>
+    <%rescue%>
+    <%end%>
+    <div class="card-body">
+        <%begin%>
+            <div class="categories">
+                <p class="snow rm-margin">categories: </p>
+                <% event.categories.each do |cat|%>
+                    <%= link_to cat.name,  "/by_category/#{cat.name}", class: 'link snow event-category'%>
+                <%end%>
+            </div>
+        <%end%>
+        <div class="flex-row evenly">
+            <h5 class="card-subtitle mb-2 text-muted">$<%= event.price %></h5>
+            <h6 class="card-text date"><%= event.date.strftime("%d-%m-%Y") %></h6>
+        </div>
+
+        <div class="btn-row">
+            <% if current_user.admin? %>
+                <%= link_to "edit", edit_event_path(event.id), class: 'card-link link edit_btn editbtn'%>
+                <%= link_to "delete", event, method: :delete,
+                                            data: { confirm: "You sure?" }, class: 'card-link link delete_btn deluser' %>
+            <%end%>
+            <%if  !current_user.events.include?(event) %>
+                <%= link_to "save", attend_event_path(event.id), method: :post, class: 'card-link link save_btn showuser' %>
+            <% else %>
+                <%= link_to "unsave", unattend_event_path(event.id), method: :delete, class: 'card-link link save_btn showuser' %>
+            <%end%>
+        </div>
+
+        <%if  current_user.events.include?(event) %>
             <div class="rating">
                 <%= render :partial => 'ratings/form', locals: {user_id: current_user.id, event_id: event.id} %>
             </div>
-            <%end%>
-
-
+        <%end%>
     </div>
-    
-</div>
-</div>
 </div>

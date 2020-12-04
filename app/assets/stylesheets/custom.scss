@@ -1,5 +1,8 @@
 html,body{
   height: 100%;
+  margin:0;
+  padding:0;
+  width:100%;
 }
 body {
   display: flex;
@@ -52,8 +55,8 @@ body {
   padding: 10px;
   justify-content: space-around;
   border: solid 5px;
-  width: 300px;
-  margin: 0px 30px 30px 30px;
+  width: 20em;
+  margin: 0px 20px 20px 20px;
   //size: 800px;
 }
 .p-3{
@@ -86,6 +89,7 @@ body {
 
 .delete_btn {
   background-color: #BF616A;
+  
 }
 .edit_btn {
   background-color:#A3BE8C ;
@@ -114,18 +118,19 @@ a.navbar-brand{
 	display:flex;
 }
 #cont-event{
-	padding-left: 10px;
+	padding-left: 0px;
 	//padding-right: 10px;
-	width:70%;
+	width:100%;
 	//display: flex; 
 	.evento-header{
-	margin-left: 50px;
-	width: 60%;
+	width: 100%;
 	align-items:center;
 	display: flex;
 	flex-direction: row; 
-	justify-content: space-between;
-	
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: #4c566a;
+  padding: 1em 2em;
 	}
 }
 .categoria{
@@ -141,7 +146,8 @@ a.navbar-brand{
 	//justify-content:center;
 	.header-cat{
 	width:100%;
-	display: flex;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   background-color: #3b4252;
 	}
@@ -171,10 +177,13 @@ a.navbar-brand{
 //-----
 .show_event{
   display:flex;
+  flex-direction: row;
 }
 .event_section{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .star-row{
   display:flex;
@@ -308,15 +317,18 @@ a.navbar-brand{
    align-items: center;
  }
  .deluser{
-   height: 40px;
+   height: 50px;
+   box-shadow: 1px 1px 2px 2px #BF616A60;
+   
  }
  .deluser:hover{
    background-color: #7F515A;
    border-color: #7F515A;
  }
   .editbtn{
-   height: 40px;
+   height: 50px;
    background-color: #a3be8c;
+   box-shadow: 1px 1px 2px 2px #a3be8c60;
  }
  .editbtn:hover{
    background-color: #839e6c;
@@ -324,9 +336,10 @@ a.navbar-brand{
  }
  .showuser{
    height: 50px;
-   width: 10vw;
+   width: calc(10vw+10vh);
    background-color: #5E81AC;
    border-color: #5E81AC;
+   box-shadow: 1px 1px 2px 2px #5e81ac60;
  }
  .showuser:hover{
     background-color: #3E619C;
@@ -353,6 +366,10 @@ a.navbar-brand{
 }
 .comment-ul{
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.8em;
 }
 
 .flex-row{
@@ -399,9 +416,13 @@ a.navbar-brand{
 }
 .comment-ul{
   background-color: #2e3440;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .comments{
   margin-left:2em;
+  width: 30%;
 }
 .cat-each{
   text-align: center;
@@ -468,8 +489,57 @@ a:hover{
 }
 .event-section{
   width: 70%;
+  height: 100vh;
 }
 
 .rm-margin{
   margin:0;
+}
+.comment-del{
+  position: relative;
+  width: 40%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.delcomment{
+  position: relative;
+  height:100%;
+  width:70%;
+  padding:20%;
+  background-color: #BF616A;
+  color: #e5e9f0;
+}
+.delcomment:hover{
+  background-color: #9F414A;
+}
+.comment{
+  margin: 0.5em 0em 0em 1.5em;
+  width:60%;
+}
+.all_events{
+  background-color: #4c566a;
+  margin-top: 2em;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.one_event{
+  width: 20em;
+}
+.btn-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+button:hover{
+  color:white;
+}
+
+.activate{
+  color: #ebcb8b;
 }
