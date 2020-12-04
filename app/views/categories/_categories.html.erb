@@ -11,8 +11,8 @@
 <% @categories = Category.all %>
 <% @categories.each do |cat| %>
   <div class="cat-name">
-    <h2>
-        <%= link_to cat.name, "/by_category/#{cat.name}", class: 'link snow' %>
+    <h2 class="cat-row">
+        <%= link_to cat.name, "/by_category/#{cat.name}", class: 'link snow cate' %>
         <% if current_user.admin? %>
           <div class="botones">
             <%= link_to "edit", edit_category_path(cat), class: ' btn btns-edlink editbtn' %>
