@@ -1,20 +1,23 @@
 <div class="col-12 col-md-3 mb-2 mb-md-5 ml-md-5 mr-md-5">
 <div class="card event">
 <%begin%>
+<% event.categories.each do |cat|%>
+    <%= link_to cat.name,  "/by_category/#{cat.name}", class: 'link snow'%>
+<%end%>
 <%= link_to image_tag("#{event.image_name}.jpg", class: "card-img-top"), event%>
 <%rescue%>
 <%end%>
 <div class="card-body">
-<h4 class="card-title">
-    <%= link_to event.title.upcase, event, class: 'link' %>
+<h4 class="card-title snow">
+    <%= link_to event.title.upcase, event, class: 'link snow' %>
     <% if current_user.admin? %>
         (<%= event.id %>)
     <%end%>
 </h4>
 <h5 class="card-subtitle mb-2 text-muted">$<%= event.price %></h5>
-<h6 class="card-text"><%= event.date.strftime("%d-%m-%Y") %></h6>
-<h6 class="card-text"><%= event.location %></h6>
-<p class="card-text"><%= event.desc %></p>
+<h6 class="card-text date"><%= event.date.strftime("%d-%m-%Y") %></h6>
+<h6 class="card-text snow"><%= event.location %></h6>
+<p class="card-text snow"><%= event.desc %></p>
     <div class="btn-row">
         <% if current_user.admin? %>
         <%= link_to "edit", edit_event_path(event.id), class: 'card-link link edit_btn'%>
