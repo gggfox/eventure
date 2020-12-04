@@ -1,11 +1,1 @@
-<div class="container-pag">
-	<div class="row title">
-  	<h1><%= @category.upcase %> Events</h1>
-	</div>
-
-	<%if @events.count > 0%>
-  		<div class="row p-3 m-auto">
-    		<%= render @events %>
-  		</div>
-	<%end%>
-</div>
+<%= render 'events' %>

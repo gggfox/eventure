@@ -1,0 +1,21 @@
+<div class="container-pag">
+	<div class="row-title">
+		<div id= "cont-event">
+  			<div class="evento-header snow"><h1>Events</h1>
+  				<% if current_user.admin? %>
+    				<button class="btn btn-primary btns ml-4 showuser" style="height: 45px;position:absolute; left:700px;">
+     	 				<%= link_to "Add New Event", new_event_path, class: 'link' %>
+    				</button>
+  				<%end%>
+  			</div>
+			<%if @events.count > 0%>
+  				<div class="row p-3 m-auto">
+    				<%= render @events %>
+				  </div>
+			<%end%>
+  		</div>
+		<div class="categoria">
+			<%= render :partial => '/categories/categories'%>
+		</div>
+	</div>
+</div> 

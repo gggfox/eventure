@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
     def create
         @category = Category.new(category_params)
         if @category.save
-            redirect_to action: "index"
+            redirect_to events_url
         end
     end
 
@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
         @category = Category.find(params[:id])
         if @category.update(category_params)
             flash[:success] = "Category updated"
-            redirect_to categories_url
+            redirect_to events_url
         else
             render 'edit'
         end
@@ -37,7 +37,7 @@ class CategoriesController < ApplicationController
     def destroy
         Category.find(params[:id]).destroy
         flash[:success] = "Category deleted"
-        redirect_to categories_url
+        redirect_to events_url
     end
 
     private

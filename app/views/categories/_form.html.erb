@@ -1,6 +1,6 @@
 <%= form_with(model: @category, local: true) do |f| %>
   <div class="new_category">
-      <%= f.label :name," NAME: ", class: "mt-2" %>
+      <%= f.label :name," NAME: ", class: "mt-2 snow" %>
       <%= f.text_field :name, class: 'form-control' %>
       <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   </div>  
