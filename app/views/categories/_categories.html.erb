@@ -17,13 +17,9 @@
         <%= link_to cat.name, "/by_category/#{cat.name}", class: 'link snow' %>
         <% if current_user.admin? %>
           <div class="botones">
-          <button class="btn btns-ed">
-            <%= link_to "edit", edit_category_path(cat), class: 'link' %>
-          </button>
-          <button class="btn btns-del2">
+            <%= link_to "edit", edit_category_path(cat), class: ' btn btns-edlink editbtn' %>
             <%= link_to "delete", cat, method: :delete,
-                                    data: { confirm: "You sure?" }, class: 'link' %>
-          </button>
+                                    data: { confirm: "You sure?" }, class: 'btn btns-del2 link deluser' %>
           </div>
         <%end%>
         </h2>

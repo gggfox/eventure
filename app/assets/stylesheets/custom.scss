@@ -75,9 +75,6 @@ body {
   color:white;
   flex-shrink: 0;
 }
-.col-12{
-
-}
 .event_img{
   width: 25vw;
 }
@@ -95,9 +92,6 @@ body {
 }
 .save_btn {
   background-color: #5E81AC;
-}
-.ruby{
-
 }
 .event-rating{
   padding-top: 1.5vw;
@@ -126,7 +120,7 @@ a.navbar-brand{
 	//display: flex; 
 	.evento-header{
 	margin-left: 50px;
-	width: 70%;
+	width: 60%;
 	align-items:center;
 	display: flex;
 	flex-direction: row; 
@@ -314,11 +308,19 @@ a.navbar-brand{
    align-items: center;
  }
  .deluser{
-   height: 50px;
+   height: 40px;
  }
  .deluser:hover{
    background-color: #7F515A;
    border-color: #7F515A;
+ }
+  .editbtn{
+   height: 40px;
+   background-color: #a3be8c;
+ }
+ .editbtn:hover{
+   background-color: #839e6c;
+   border-color: #839e6c;
  }
  .showuser{
    height: 50px;
@@ -385,13 +387,15 @@ a.navbar-brand{
 
 .row-title{
   background-color: #4c566a;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 .categoria{
   background-color: #3b4252;
+  width:35%;
+  margin:0;
 }
 .edit-cat{
   background-color: #4c566a;
@@ -404,4 +408,33 @@ a.navbar-brand{
 .event{
   background-color: #2e3440;
   box-shadow: 0.4px 0.4px 4px 4px #2e3440;
+}
+
+a:hover{
+  color:white;
+}
+
+.categories{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.event-category{
+  margin: 1% 2%;
+  background-color: #BF616A;
+  font-size: 0.6em;
+  padding: 1% 2%;
+  border-radius: 1em;
+}
+.evenly{
+  justify-content: space-between;
+  margin: 0.6em;
+}
+.event-section{
+  width: 70%;
+}
+
+.rm-margin{
+  margin:0;
 }
