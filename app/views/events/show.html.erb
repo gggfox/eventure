@@ -16,12 +16,17 @@
     <div class="media-body ml-3">
       
       
-      
-      <h6 class="snow"><%= @event.desc %></h6>
-      
+      <h4 class="snow" style="margin-top: 25px;font-weight: bold;background-color:#2e3440; width:160px;padding: 5px 10px 5px 10px;">Description</h4>
+      <h6 class="snow" style="margin: 25px 0px 40px 0px;"><%= @event.desc %></h6>
+
+      <h4 class="snow" style="margin-top: 25px;font-weight: bold;background-color:#2e3440; width:160px;padding: 5px 10px 5px 10px">Categories</h4>
+      <div class="cont-cat">
       <% @event.categories.each do |cat| %>
+        <div class="cat-each">
         <%= link_to cat.name, "/by_category/#{cat.name}", class: 'link snow' %>
+        </div>
       <%end%>
+      </div>
 
     </div>
     </div>

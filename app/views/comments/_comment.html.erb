@@ -3,7 +3,7 @@
         <%= comment.comment%>
         <% if current_user.id == comment.user_id || current_user.admin?%>
             <%= link_to "delete", comment, method: :delete,
-                                data: { confirm: "You sure?" } %>
+                                data: { confirm: "You sure?" },class:"card-link link delete_btn deluser"%>
         <%end%>
     </li>
     <% writer = User.find(comment.user_id) %>
