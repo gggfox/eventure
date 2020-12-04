@@ -46,10 +46,19 @@ body {
   text-decoration: none;
   color: #2E3440;
 }
+//CARD EVENT
 .event {
   background-color: #D8DEE9;
   padding: 10px;
+  justify-content: space-around;
   border: solid 5px;
+  width: 300px;
+  margin: 0px 30px 30px 30px;
+  //size: 800px;
+}
+.p-3{
+	justify-content: space-evenly;
+	margin-right: 30px;
 }
 .title{
   margin: 10px;
@@ -66,7 +75,9 @@ body {
   color:white;
   flex-shrink: 0;
 }
+.col-12{
 
+}
 .event_img{
   width: 25vw;
 }
@@ -85,13 +96,84 @@ body {
 .save_btn {
   background-color: #5E81AC;
 }
+.ruby{
 
+}
 .event-rating{
   padding-top: 1.5vw;
   display: flex;
   justify-content: center;
 }
-
+//eventure title
+a.navbar-brand{
+	font-size: 40px;
+}
+//container
+.container-pag{
+	display: flex;
+	//justify-content: space-between;
+}
+//container de event y categorias
+.row-title{
+	//$border-width: 30px;
+	//justify-content: center;
+	display:flex;
+}
+#cont-event{
+	padding-left: 10px;
+	//padding-right: 10px;
+	width:70%;
+	//display: flex; 
+	.evento-header{
+	margin-left: 50px;
+	width: 70%;
+	align-items:center;
+	display: flex;
+	flex-direction: row; 
+	justify-content: space-between;
+	
+	}
+}
+.categoria{
+	//overflow: auto;
+	//position:fixed;
+	//right: 500px; 
+	//padding-left: 40px;
+	padding-right: 40px;
+	width:40%;
+	margin-left: 100px;
+	flex-direction: column;
+	right:50px;
+	//justify-content:center;
+	.header-cat{
+	width:100%;
+	display: flex;
+	justify-content: space-between;
+	}
+	.cat-name{
+	width: 100%;
+	//display: flex;
+	flex-direction: column;
+	//justify-content:center;
+	border-bottom: 2px solid #2E3440;
+	}
+}
+/*
+.header-cat{
+	display: flex;
+	background-color: snow;
+	justify-content: space-between;
+}
+.cat-name{
+	background-color: pink;
+	//display: flex;
+	flex-direction: column;
+	//justify-content:center;
+	border-bottom: 2px solid #2E3440;
+}
+.botones{
+}*/
+//-----
 .show_event{
   display:flex;
 }

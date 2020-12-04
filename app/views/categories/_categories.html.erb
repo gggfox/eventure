@@ -1,17 +1,22 @@
 <div class="row title">
-  <h1 class="snow">Categories</h1>
-  <% if current_user.admin? %>
-    <button class="btn btn-primary btns ml-4" style="height: 45px;">
-   
-      <%= link_to "Add new category", new_category_path, class: 'link' %>
-    </button>
-  <%end%>
+
+  <div class="header-cat">
+    <h1 class="snow">Categories</h1>
+    <% if current_user.admin? %>
+      <button class="btn btn-primary btns ml-4" style="height: 45px;">
+        <%= link_to "Add new category", new_category_path, class: 'link' %>
+      </button>
+    <%end%>
+  </div>
 </div>
 <ul>
-<% Category.all.each do |cat| %>
+<% @categories = Category.all %>
+<% @categories.each do |cat| %>
+  <div class="cat-name">
     <h2>
         <%= link_to cat.name, "/by_category/#{cat.name}", class: 'link snow' %>
         <% if current_user.admin? %>
+          <div class="botones">
           <button class="btn btns-ed">
             <%= link_to "edit", edit_category_path(cat), class: 'link' %>
           </button>
@@ -19,7 +24,9 @@
             <%= link_to "delete", cat, method: :delete,
                                     data: { confirm: "You sure?" }, class: 'link' %>
           </button>
+          </div>
         <%end%>
         </h2>
+  </div>
 <%end%>
 </ul>
