@@ -557,3 +557,31 @@ button:hover{
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.alert{
+  margin:0;
+}
+
+@media only screen and (max-width: 600px) {
+  .pagination{
+    margin:0;
+  }
+  .pagination > li > a{
+    margin: 0.4em;
+    padding: 0.4em 0.7em;
+  }
+  .nav-link{
+    text-align: center;
+  }
+  .show_event{
+    width:100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .comments{
+    margin:0;
+    width:100%;
+  }
+  .event_section{
+    width:100%;
+  }
+}
