@@ -360,10 +360,22 @@ a.navbar-brand{
   flex-direction: row;
   justify-content: center;
 }
+.form-control{
+    border-top-right-radius: 0px; 
+    border-bottom-right-radius: 0px; 
+  }
 .event_section{
   background-color: #4c566a;
   width:60%;
   height:100vh;
+  h1{
+    text-align: center; 
+    width:400px;
+  }
+  h3{
+    text-align: center;
+    width:400px;
+  }
 }
 .show-img{
   height:200px;
@@ -372,7 +384,18 @@ a.navbar-brand{
 .under-img{
   background-color: #2e3440;
   justify-content: space-between;
-  width: 100%;
+  width: 400px;
+  .date{
+    padding-top: 7px;
+    margin-right:10px;
+    text-align: right;
+    //align-items:center;
+  }
+  .text-muted{
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+
 }
 .comment-ul{
   background-color: #2e3440;
@@ -380,7 +403,19 @@ a.navbar-brand{
 .comments{
   margin-left:2em;
 }
-
+.cat-each{
+  text-align: center;
+  background-color: #9F414A;
+  width: auto;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px; 
+  margin-right: 10px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.cont-cat{
+  display: flex;
+}
 .date{
   color: #ebcb8b;
 }
