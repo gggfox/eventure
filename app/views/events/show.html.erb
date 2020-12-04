@@ -2,7 +2,7 @@
   <section class="event_section">
     <div class="row title">
     <div class="col col-md-6">
-    <div class="event_section">
+    <aside class="event_section">
     <%= image_tag("#{@event.image_name}.jpg", class: "h-50 w-50") %>
     <div class="media-body ml-3">
       <h1><%= @event.title %></h1>
@@ -10,7 +10,9 @@
       <h3><%= @event.date.strftime("%d-%m-%Y") %></h3>
       <h3><%= @event.location %></h3>
       <h6><%= @event.desc %></h6>
-      <%= render @event.categories %>
+     <% @event.categories.each do |cat| %>   
+         <%= link_to cat.name, "/by_category/#{cat.name}", class: 'link' %>       
+    <%end%>
     </div>
     </div>
     </div>

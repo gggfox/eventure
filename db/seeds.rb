@@ -42,6 +42,6 @@ Comment.create!( comment:"awsome",
                 price: n*50,
                 image_name: "party",
                 category_ids: ["1"],
-                comment: ["1"]
+                comments: ["1"]
                 )
 end
