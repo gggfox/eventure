@@ -20,25 +20,5 @@
     <%= yield %>
     </section>
   </body>
-  <script>
-      let events = document.getElementById("nav-events");
-      let users  = document.getElementById("nav-users");
-      events.addEventListener("click", (e)=>{
-        e.preventDefault();
-        window.location.href="/events"
-        users.classList.remove("active");
-        
-        events.classList.add("active");
-        console.log("hello");
-        
-      })
-
-      users.addEventListener("click", (u)=>{
-        u.preventDefault();
-        events.classList.remove("active");
-        users.classList.add("active");
-        console.log("hello");
-        window.location.href="/users"
-      })
-  </script>
+<%= javascript_pack_tag 'navbar' %>
 </html>

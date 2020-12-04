@@ -7,12 +7,12 @@
 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
   <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
     <li class="nav-item">
-      <a id="nav-events" class="nav-link activate" aria-current="page" href="/events">Events</a>
+      <a id="nav-events" class="nav-link" aria-current="page" href="/events">Events</a>
     </li>
 
  <% if logged_in? %>
       
-          <li id="nav-users" class="nav-item"><%=link_to"Users", users_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%=link_to"Users", users_path, class: 'nav-link', id: "nav-users" %></li>
           <li class="dropdown nav-item">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
               Account <b class="caret"></b>

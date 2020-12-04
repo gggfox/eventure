@@ -565,4 +565,21 @@ button:hover{
     display:flex; 
     flex-wrap: wrap;
   }
+
+.active1{
+  background-color: #b48ead;
+  border-radius: 1em;
+  padding: 0.2em;
+  margin: 0.1em;
+}
+
+.cate{
+  margin-bottom: 0.3em;
+}
+
+.cat-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
