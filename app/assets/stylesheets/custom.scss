@@ -565,7 +565,7 @@ button:hover{
     display:flex; 
     flex-wrap: wrap;
   }
-
+}
 .active1{
   background-color: #b48ead;
   border-radius: 1em;
@@ -587,7 +587,7 @@ button:hover{
   margin:0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px){
   .pagination{
     margin:0;
   }
