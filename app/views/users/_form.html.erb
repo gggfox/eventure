@@ -1,17 +1,17 @@
 <%= form_with(model: @user, local: true) do |f| %>
     <%= render 'shared/error_messages' %>
 
-    <%= f.label :name %>
+    <%= f.label :name, class:"snow" %>
     <%= f.text_field :name, class: 'form-control' %>
 
-    <%= f.label :email %>
+    <%= f.label :email, class:"snow" %>
     <%= f.email_field :email, class: 'form-control' %>
 
-    <%= f.label :password %>
+    <%= f.label :password, class:"snow" %>
     <%= f.password_field :password, class: 'form-control' %>
 
-    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.label :password_confirmation, "Confirmation", class:"snow" %>
     <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-    <%= f.submit yield(:button_text), class: "btn btn-primary mt-1" %>
+    <div class="center mt-4"><%= f.submit yield(:button_text), class: "btn btn-green" %></div>
   <% end %>

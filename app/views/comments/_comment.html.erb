@@ -1,11 +1,11 @@
-<div>
-    <li>
-        <%= comment.comment %>
+<ul class="comment-ul">
+    <li class= "snow">
+        <%= comment.comment%>
         <% if current_user.id == comment.user_id || current_user.admin?%>
             <%= link_to "delete", comment, method: :delete,
                                 data: { confirm: "You sure?" } %>
         <%end%>
     </li>
     <% writer = User.find(comment.user_id) %>
-    <li>By: <%= link_to writer.name, writer %></li>
-</div>
+    <li class="snow">By: <%= link_to writer.name, writer %></li>
+</ul>

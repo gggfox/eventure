@@ -3,14 +3,25 @@
     <div class="row title">
     <div class="col col-md-6">
     <div class="event_section">
-    <%= image_tag("#{@event.image_name}.jpg", class: "h-50 w-50") %>
+    <h1 class="snow"><%= @event.title %></h1>
+    
+    <h3 class="snow"><%= @event.location %></h3>
+    <div>
+      <%= image_tag("#{@event.image_name}.jpg", class: "show-img") %>
+      <div class="flex-row under-img">
+        <h2 class="text-muted">$<%= @event.price %></h2>
+        <h3 class="date"><%= @event.date.strftime("%d-%m-%Y") %></h3>
+      </div>
+    </div>
     <div class="media-body ml-3">
-      <h1><%= @event.title %></h1>
-      <h2 class="text-muted">$<%= @event.price %></h2>
-      <h3><%= @event.date.strftime("%d-%m-%Y") %></h3>
-      <h3><%= @event.location %></h3>
-      <h6><%= @event.desc %></h6>
-      <%= render @event.categories %>
+      
+      
+      
+      <h6 class="snow"><%= @event.desc %></h6>
+      
+      <% @event.categories.each do |cat| %>
+        <%= link_to cat.name, "/by_category/#{cat.name}", class: 'link snow' %>
+      <%end%>
     </div>
     </div>
     </div>
@@ -18,7 +29,7 @@
   </section>
 
   <section class="comments">
-    <h4 class="title">Comments</h4>
+    <h4 class="title snow">Comments</h4>
     <div class="row title">
     <% if @event.date < DateTime.now() || current_user.admin? %>
         <%= render :partial => 'comments/form', locals: {user_id: current_user.id, event_id: @event.id} %>

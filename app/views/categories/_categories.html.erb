@@ -1,16 +1,16 @@
 <div class="row title">
-  <h1>Categories</h1>
+  <h1 class="snow">Categories</h1>
   <% if current_user.admin? %>
     <button class="btn btn-primary btns ml-4" style="height: 45px;">
+   
       <%= link_to "Add new category", new_category_path, class: 'link' %>
     </button>
   <%end%>
 </div>
 <ul>
-<% @categories = Category.all %>
-<% @categories.each do |cat| %>
+<% Category.all.each do |cat| %>
     <h2>
-        <%= link_to cat.name, "/by_category/#{cat.name}", class: 'link' %>
+        <%= link_to cat.name, "/by_category/#{cat.name}", class: 'link snow' %>
         <% if current_user.admin? %>
           <button class="btn btns-ed">
             <%= link_to "edit", edit_category_path(cat), class: 'link' %>

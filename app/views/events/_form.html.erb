@@ -4,22 +4,22 @@
   <%end%>
 <%= form_with(model: @event, local: true) do |f| %>
 
-    <%= f.label :title %>
+    <%= f.label :title, class:"snow" %>
     <%= f.text_field :title, class: 'form-control' %>
 
-    <%= f.label :location %>
+    <%= f.label :location, class:"snow" %>
     <%= f.text_field :location, class: 'form-control' %>
 
-    <%= f.label :date %>
+    <%= f.label :date, class:"snow" %>
     <%= f.date_field :date, class: 'form-control' %>
     
-    <%= f.label :desc %>
+    <%= f.label :desc, class:"snow" %>
     <%= f.text_area :desc, class: 'form-control' %>
 
-    <%= f.label :price%>
+    <%= f.label :price, class:"snow"%>
     <%= f.number_field :price, class: 'form-control' %>
 
-    <%= f.label :image_name %>
+    <%= f.label :image_name, class:"snow" %>
     <%= f.text_field :image_name, class: 'form-control' %>
 
     <% list = [] %>
@@ -27,12 +27,12 @@
       <div><%list.push(b.name)%></div>
     <%end%>
 
-    <h3>event categories</h3>
+    <h3 class="snow">event categories</h3>
     <%= f.collection_check_boxes(:category_ids, @categories, :id, :name) do |b| %>
-      <div><%= b.check_box({checked: list.include?(b.text)}) %><%=  b.label {b.text}%></div>
+      <div class="snow"><%= b.check_box({checked: list.include?(b.text)}) %><%=  b.label {b.text}%></div>
     <%end%>
 
-    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <%= f.submit yield(:button_text), class: "btn btn-primary showuser" %>
       
   <% end %>
   

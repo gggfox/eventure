@@ -1,8 +1,8 @@
 
 <div class="row title">
-  <h1>Events</h1>
+  <h1 class="snow">Events</h1>
   <% if current_user.admin? %>
-    <button class="btn btn-primary btns ml-4" style="height: 45px;">
+    <button class="btn btn-primary btns ml-4 showuser" style="height: 45px;">
       <%= link_to "Add New Event", new_event_path, class: 'link' %>
     </button>
   <%end%>

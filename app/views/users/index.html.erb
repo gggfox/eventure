@@ -1,13 +1,13 @@
 <% provide(:title, "Eventure") %>
 
 <div class="title">
-  <h1>All users</h1>
+  <h1 class="snow">All users</h1>
 </div>
-
+<%=will_paginate%>
 <div class="row">
   <%= render @users %>   
 </div>
-
+<br>
 <%=will_paginate%>
 
 <%= javascript_pack_tag 'hello' %>

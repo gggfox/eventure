@@ -31,6 +31,7 @@ postgres=# ALTER USER username CREATEDB;
 * rails db:migrate
 * rails generate model User name:string email:string:index
 * rails db:migrate
+* rails db:schema:load
 * rails server
 * rails db:migrate:reset
 + rails test

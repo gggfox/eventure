@@ -5,7 +5,12 @@
 <%rescue%>
 <%end%>
 <div class="card-body">
-<h4 class="card-title"><%= link_to event.title.upcase, event, class: 'link' %>(<%= event.id%>)</h4>
+<h4 class="card-title">
+    <%= link_to event.title.upcase, event, class: 'link' %>
+    <% if current_user.admin? %>
+        (<%= event.id %>)
+    <%end%>
+</h4>
 <h5 class="card-subtitle mb-2 text-muted">$<%= event.price %></h5>
 <h6 class="card-text"><%= event.date.strftime("%d-%m-%Y") %></h6>
 <h6 class="card-text"><%= event.location %></h6>
@@ -21,8 +26,10 @@
             <%= link_to "save", attend_event_path(event.id), method: :post, class: 'card-link link save_btn' %>
         <% else %>
             <%= link_to "unsave", unattend_event_path(event.id), method: :delete, class: 'card-link link save_btn' %>
-            <div class="event-rating">rating:<%= select_tag(:option, options_for_select([["1",1],["2",2],["3",3],["4",4],["5",5]], params[:option] ), class:"select") %></div>
-        <%end%>
+            <div class="rating">
+                <%= render :partial => 'ratings/form', locals: {user_id: current_user.id, event_id: event.id} %>
+            </div>
+            <%end%>
     </div>
 </div>
 </div>

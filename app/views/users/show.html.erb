@@ -1,17 +1,17 @@
 <% provide(:title, @user.name) %>
-<div class="row title">
+<div class="row-right title">
 <div class="media">
   <h2 class="mr-3">
     <%= gravatar_for @user %>
   </h2>
   <div class="media-body">
-    <h2><%= @user.name %></h2> 
-    <h2><%= @user.email %></h2>
+    <h2 class="snow"><%= @user.name %></h2> 
+    <h2 class="snow"><%= @user.email %></h2>
   </div>
 </div>
 </div>
-<div class="row title">
-  <h2>Going to:</h2>
+<div class="row-right title">
+  <h2 class="snow">Going to:</h2>
 </div>
 <div class="row" id="user_events>
   <div class="row p-3">

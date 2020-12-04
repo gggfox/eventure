@@ -4,9 +4,10 @@ html,body{
 body {
   display: flex;
   flex-direction: column;
+  background-color: #3B4252;
 }
 .main-body{
-  background-color: #ECEFF4;
+  background-color:  #3B4252;
 }
 .navbar{
   background-color: #2E3440;
@@ -52,6 +53,9 @@ body {
 }
 .title{
   margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .profile-pic{
   border-radius: 4px;
@@ -94,4 +98,203 @@ body {
 .event_section{
   display: flex;
   flex-direction: column;
+}
+.star-row{
+  display:flex;
+  flex-direction: row;
+}
+
+
+@mixin star-rating( $filled-color: #F9BF3B, $empty-color: #444, $size: 50px, $width: 500px) {
+  $star--filled: ★;
+  $star--empty: ☆;
+  width: $width;
+  > * {
+   float: right;
+  }
+  // optional initial pulse of stars
+  @at-root {
+   @keyframes pulse {
+    50% {
+     color: lighten($empty-color, 10%);
+     text-shadow: 0 0 15px lighten($empty-color, 20%);
+    }
+   }
+  }
+  label {
+   height: 40px;
+   width: 20%;
+   display: block;
+   position: relative;
+   cursor: pointer;
+   @for $i from 5 through 1 {
+    &:nth-of-type(#{$i}):after {
+     $animation-delay: $i * .05s;
+     animation-delay: $animation-delay;
+    }
+   }
+   &:after {
+    transition: all 0.4s ease-out;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    content: '#{$star--empty}';
+    color: $empty-color;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: $size;
+    animation: 1s pulse ease;
+   }
+   &:hover:after {
+    color: lighten($empty-color, 10%);
+    text-shadow: 0 0 15px lighten($empty-color, 10%);
+   }
+  }
+  input {
+   display: none;
+   &:checked {
+    + label:after,
+    ~ label:after {
+     content: '#{$star--filled}';
+     color: $filled-color;
+     text-shadow: 0 0 20px $filled-color;
+    }
+   }
+  }
+ }
+ 
+ .rating {
+  margin: 0px auto;
+  @include star-rating($size: 40px, $width:240px);
+ }
+
+ .star-rating{
+   width:100%;
+ }
+
+ .new_category{
+   display:flex;
+   flex-direction: row;
+ }
+
+.mg-top-3vw{
+  margin-top: 3vw;
+} 
+
+ .login{
+   background-color: #434c5e;
+   width: 40%;
+   border-radius: 2em;
+   padding: 2vw 1vw;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+ 
+ .snow{
+  color: #e5e9f0;
+ }
+
+ .btn-green{
+   background-color: #81a1c1;
+   border-color: #3b4252;
+   width: 30%;
+   color: #eceff4;
+ }
+
+ .signup{
+   background-color: #434c5e;
+   width: 40%;
+   border-radius: 2em;
+   padding: 2vw 1vw;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+ form{
+   width: 100%;
+ }
+
+ .center{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+ }
+ .user-bkgnd{
+   background-color: #2E3440;
+   border-radius: 1em;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+ }
+ .deluser{
+   height: 50px;
+ }
+ .deluser:hover{
+   background-color: #7F515A;
+   border-color: #7F515A;
+ }
+ .showuser{
+   height: 50px;
+   width: 10vw;
+   background-color: #5E81AC;
+   border-color: #5E81AC;
+ }
+ .showuser:hover{
+    background-color: #3E619C;
+    border-color: #3E619C;
+ }
+ .row-right{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+ }
+ .pagination{
+   justify-content: center;
+   margin: 1em ;
+ }
+.pagination>li>a{
+  background-color: #81a1c1;
+  color:#2e3440;
+  border-radius: 4em;
+  padding: 1em 1.5em;
+  margin: 1.5em;
+}
+.pagination>li>a:hover{
+  background-color: #8fbcbb;
+}
+.comment-ul{
+  list-style: none;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+.event_section{
+  background-color: #4c566a;
+  width:60%;
+  height:100vh;
+}
+.show-img{
+  height:200px;
+  width: 400px;
+}
+.under-img{
+  background-color: #2e3440;
+  justify-content: space-between;
+  width: 100%;
+}
+.comment-ul{
+  background-color: #2e3440;
+}
+.comments{
+  margin-left:2em;
+}
+
+.date{
+  color: #ebcb8b;
 }
